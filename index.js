@@ -80,7 +80,7 @@ inquirer.prompt([ {
         {
             type: 'input',
             name: 'github',
-            message: 'what is your office number',
+            message: 'what is your Github username?',
         }]).then(answers => {
             const engineer = new Engineer(answers.name, answers.ID, answers.email, answers.github);
             team.push(engineer);

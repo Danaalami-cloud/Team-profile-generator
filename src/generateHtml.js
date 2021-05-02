@@ -1,3 +1,4 @@
+const Engineer = require("../Lib/engineer");
 
 
 const generateTeamHTML = (team) => {
@@ -16,23 +17,71 @@ const generateTeamHTML = (team) => {
               <p class="title is-4">Manager: ${manager.getName()}</p>
               <div class="content">
               <p>ID: ${manager.getId()}</p>
-              <p>ID: ${manager.getEmail()}</p>
-              <p>ID: ${manager.getOfficeNumber()}</p>
+              <p>Email: ${manager.getEmail()}</p>
+              <p>Office number: ${manager.getOfficeNumber()}</p>
               </div>
-              <a href="ID">#css</a> <a href="#">#responsive</a>
+              
             </div>      
-  `
-
-
-               
+  `            
     }
+    const generateEngineerHtmlSection = engineer => {
+        console.log(engineer)
+        return ` <div class="card">
+        <div class="card-content">
+          <div class="media">
+            <div class="media-center">
+              <i class="fas fa-user-graduate"></i>
+            </div>
+            <div class="media-content">
+              <p class="title is-4">Engineer: ${engineer.getName()}</p>
+              <div class="content">
+              <p>ID: ${engineer.getId()}</p>
+              <p>Email: ${engineer.getEmail()}</p>
+              <p>Github: ${engineer.getGithub()}</p>
+              </div>
+              
+            </div>  
+            `
+        } 
+
+        const generateStudentHtmlSection = student => {
+            console.log(student)
+            return ` <div class="card">
+            <div class="card-content">
+              <div class="media">
+                <div class="media-center">
+                  <i class="fas fa-user-graduate"></i>
+                </div>
+                <div class="media-content">
+                  <p class="title is-4">Student: ${student.getName()}</p>
+                  <div class="content">
+                  <p>ID: ${student.getId()}</p>
+                  <p>Email: ${student.getEmail()}</p>
+                  <p>School: ${student.getSchool()}</p>
+                  </div>
+                  
+                </div>  
+                `
+            } 
+
+    
+    
+
 
     arrayOfHtmlStrings.push( team.filter(teamMember => 
         teamMember.getRole() === "Manager"
     ).map(manager => generateManagerHtmlSection(manager)))
    
 
+    arrayOfHtmlStrings.push( team.filter(teamMember => 
+        teamMember.getRole() === "Engineer"
+    ).map(engineer => generateEngineerHtmlSection(engineer)))
 
+    arrayOfHtmlStrings.push( team.filter(teamMember => 
+        teamMember.getRole() === "Student"
+    ).map(student => generaterStudentHtmlSection(student)))
+   
+   
 
 
 
