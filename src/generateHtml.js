@@ -15,6 +15,7 @@ const generateTeamHTML = (team) => {
             </div>
             </div>
             </div>
+            </div>
             
             <div class="media-content">
               <p class="title is-4">Manager: ${manager.getName()}</p>
@@ -50,7 +51,7 @@ const generateTeamHTML = (team) => {
             `
         } 
 
-        const generateStudentHtmlSection = student => {
+        const generatestudentHtmlSection = student => {
             console.log(student)
             return ` <div class="card">
             <div class="card-content">
@@ -87,7 +88,7 @@ const generateTeamHTML = (team) => {
 
     arrayOfHtmlStrings.push( team.filter(teamMember => 
         teamMember.getRole() === "Student"
-    ).map(student => generaterStudentHtmlSection(student)))
+    ).map(student => generatestudentHtmlSection(student)))
    
    
 
