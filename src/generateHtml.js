@@ -87,7 +87,7 @@ const generateTeamHTML = (team) => {
     ).map(engineer => generateEngineerHtmlSection(engineer)))
 
     arrayOfHtmlStrings.push( team.filter(teamMember => 
-        teamMember.getRole() === "Student"
+        teamMember.getRole() === "Intern"
     ).map(student => generatestudentHtmlSection(student)))
    
    
