@@ -46,11 +46,11 @@ const team = [];
     function createTeamMember(){
 inquirer.prompt([ {
     type: 'list',
-    name: 'chpoice',
+    name: 'choice',
     message: 'What is the role of the employee you want to create next?',
     choices: ["Engineer", "Intern", "None" ]
 }]).then(answer => {
-    if(answer.choice === "engineer"){
+    if(answer.choice === "Engineer"){
         generateEngineer();
     } else if (answer.choice === "Intern"){
         generateIntern();
@@ -61,11 +61,61 @@ inquirer.prompt([ {
     }
 
     function generateEngineer() {
-
+        inquirer.prompt([
+            {
+                type: 'input',
+                name: 'name',
+                message: 'what is your name?',
+            },
+            {
+            type: 'input',
+            name: 'ID',
+            message: 'what is your id?',
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: 'what is your email address?',
+        },
+        {
+            type: 'input',
+            name: 'github',
+            message: 'what is your office number',
+        }]).then(answers => {
+            const engineer = new Engineer(answers.name, answers.ID, answers.email, answers.github);
+            team.push(engineer);
+            console.log(team);
+            createTeamMember();
+        })
     }
 
     function generateIntern() {
-
+        inquirer.prompt([
+            {
+                type: 'input',
+                name: 'name',
+                message: 'what is your name?',
+            },
+            {
+            type: 'input',
+            name: 'ID',
+            message: 'what is your id?',
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: 'what is your email address?',
+        },
+        {
+            type: 'input',
+            name: 'school',
+            message: 'what is your school',
+        }]).then(answers => {
+            const intern = new Intern(answers.name, answers.ID, answers.email, answers.school);
+            team.push(intern);
+            console.log(team);
+            createTeamMember();
+        })
     }
 
     function generateTeamHTML(){
