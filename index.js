@@ -45,3 +45,29 @@ const questions = [{
     err ? console.log(err) : console.log('hopefully created index.html!')
     );
   });
+
+  class Manager {
+    constructor(ID, email, officeNumber) {
+      this.ID = ID;
+      this.email = email;
+      this.officeNumber = officeNumber;
+    }
+}
+
+ class Intern {
+     constructor(name, ID, email, school) {
+         this.name = name;
+         this.ID = ID;
+         this.email = email;
+         this.school = school;
+     }
+ }
+
+ class engineer {
+     constructor(name, ID, email, Github){
+         this.name = name;
+         this.ID = ID;
+         this.email = email;
+         this.Github = Github;
+     }
+ }
