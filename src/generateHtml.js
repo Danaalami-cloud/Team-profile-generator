@@ -30,7 +30,7 @@ const generateTeamHTML = (team) => {
         <div class="card-content">
           <div class="media">
             <div class="media-center">
-              <i class="fas fa-user-graduate"></i>
+            <i class="fas fa-glasses"></i>
             </div>
             <div class="media-content">
               <p class="title is-4">Engineer: ${engineer.getName()}</p>
@@ -50,7 +50,7 @@ const generateTeamHTML = (team) => {
             <div class="card-content">
               <div class="media">
                 <div class="media-center">
-                  <i class="fas fa-user-graduate"></i>
+                <i class="fas fa-user-graduate"></i>
                 </div>
                 <div class="media-content">
                   <p class="title is-4">Student: ${student.getName()}</p>
