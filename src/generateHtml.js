@@ -11,8 +11,7 @@ const generateTeamHTML = (team) => {
         <div class="card-content">
           <div class="media">
             <div class="media-center">
-              <i class="fas fa-user-graduate"></i>
-            </div>
+            <i class="fas fa-briefcase"></i>  </div>           
             </div>
             </div>
             </div>
