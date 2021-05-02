@@ -38,12 +38,26 @@ const team = [];
         }]).then(answers => {
             const manager = new Manager(answers.name, answers.ID, answers.email, answers.office);
             team.push(manager);
-            console.log(team)
+            console.log(team);
+            createTeamMember();
         })
     }
 
     function createTeamMember(){
-
+inquirer.prompt([ {
+    type: 'list',
+    name: 'chpoice',
+    message: 'What is the role of the employee you want to create next?',
+    choices: ["Engineer", "Intern", "None" ]
+}]).then(answer => {
+    if(answer.choice === "engineer"){
+        generateEngineer();
+    } else if (answer.choice === "Intern"){
+        generateIntern();
+    } else {
+        generateTeamHTML();
+    }
+})
     }
 
     function generateEngineer() {
