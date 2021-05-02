@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Danaalami-cloud/Team-profile-generator/issues"
   },
-  "homepage": "https://github.com/Danaalami-cloud/Team-profile-generator#readme"
+  "homepage": "https://github.com/Danaalami-cloud/Team-profile-generator#readme",
+  "dependencies": {
+    "inquirer": "^8.0.0"
+  }
 }
