@@ -119,7 +119,11 @@ inquirer.prompt([ {
     }
 
     function generateTeamHTML(){
-
+        if(!fs.existsSync(htmlFileFolder)){
+            fs.mkdirSync(htmlFileFolder)
+        }
+        console.log(team, "before being passed")
+        fs.writeFileSync(htmlPath, generateHtml(team), "utf-8")
     }
 
     generateManager();

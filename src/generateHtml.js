@@ -1,8 +1,11 @@
-const generateTeamHTML = (team) => {
 
+
+const generateTeamHTML = (team) => {
+    console.log(team, "after passed")
     const arrayOfHtmlStrings = []; 
 
     const generateManagerHtmlSection = manager => {
+        console.log(manager)
         return ` <div class="card">
         <div class="card-content">
           <div class="media">
@@ -12,7 +15,7 @@ const generateTeamHTML = (team) => {
             <div class="media-content">
               <p class="title is-4">Manager: ${manager.getName()}</p>
               <div class="content">
-              <p>ID: ${manager.getID()}</p>
+              <p>ID: ${manager.getId()}</p>
               <p>ID: ${manager.getEmail()}</p>
               <p>ID: ${manager.getOfficeNumber()}</p>
               </div>
@@ -24,10 +27,10 @@ const generateTeamHTML = (team) => {
                
     }
 
-    const teamManager = team.filter(teamMember => {
+    arrayOfHtmlStrings.push( team.filter(teamMember => 
         teamMember.getRole() === "Manager"
-    })
-    arrayOfHtmlStrings.push(generateManagerHtmlSection(teamManager)); 
+    ).map(manager => generateManagerHtmlSection(manager)))
+   
 
 
 
